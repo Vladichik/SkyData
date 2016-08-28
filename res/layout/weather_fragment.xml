@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/weather_background"
+    android:baselineAligned="false"
+    android:measureWithLargestChild="false"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <EditText
+            android:id="@+id/weatherICAOInput"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corners_edittext"
+            android:ems="10"
+            android:hint="@string/weather_input_field"
+            android:inputType="textCapCharacters"
+            android:maxLength="4"
+            android:padding="7dp"
+            android:singleLine="true" >
+        </EditText>
+
+        <Button
+            android:id="@+id/showWeatherData"
+            style="@style/AppTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/button_action_show_states"
+            android:minHeight="37dip"
+            android:text="@string/show_weather_button"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/arrivals_list_container"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/airportName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textColor="@color/logo_red_darker"
+            android:textSize="@dimen/airport_name"/>
+
+        <TextView
+            android:id="@+id/airportICAO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:gravity="right"
+            android:paddingLeft="0dp"
+            android:textColor="@color/logo_red_darker"
+            android:textSize="@dimen/airport_name" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/weatherScrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/arrivals_list_container" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/arrivals_list_container"
+                android:orientation="horizontal"
+                android:padding="5dp" >
+
+                <ImageView
+                    android:id="@+id/repTimeIcons"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:contentDescription="@string/temperature"
+                    android:src="@drawable/wether_icon_clock" />
+
+                <TextView
+                    android:id="@+id/repTimeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:text="@string/report_time_ttl"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+
+                <TextView
+                    android:id="@+id/reportTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/weather_dinamic_data_padding"
+                    android:singleLine="true"
+                    android:text="@string/not_available"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/weather_row_spacing"
+                android:background="@drawable/border_bottom"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/wIcon1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/temperature"
+                    android:src="@drawable/wether_icon_temp" />
+
+                <TextView
+                    android:id="@+id/wTitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:text="@string/temperature"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+
+                <TextView
+                    android:id="@+id/weatherTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/weather_dinamic_data_padding"
+                    android:singleLine="true"
+                    android:text="@string/not_available"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/weather_row_spacing"
+                android:background="@drawable/border_bottom"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/wIcon2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/pressure"
+                    android:src="@drawable/wether_icon_pressure" />
+
+                <TextView
+                    android:id="@+id/wTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:text="@string/pressure"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+
+                <TextView
+                    android:id="@+id/weatherPress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/weather_dinamic_data_padding"
+                    android:singleLine="true"
+                    android:text="@string/not_available"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/weather_row_spacing"
+                android:background="@drawable/border_bottom"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/wIcon3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/humidity"
+                    android:src="@drawable/wether_icon_humid" />
+
+                <TextView
+                    android:id="@+id/wTitle3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:text="@string/humidity"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+
+                <TextView
+                    android:id="@+id/weatherHumid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/weather_dinamic_data_padding"
+                    android:singleLine="true"
+                    android:text="@string/not_available"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/weather_row_spacing"
+                android:background="@drawable/border_bottom"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/wIcon4"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/clouds"
+                    android:src="@drawable/wether_icon_cloud" />
+
+                <TextView
+                    android:id="@+id/wTitle4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:text="@string/clouds"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+
+                <TextView
+                    android:id="@+id/weatherClouds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/weather_dinamic_data_padding"
+                    android:singleLine="true"
+                    android:text="@string/not_available"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/weather_row_spacing"
+                android:background="@drawable/border_bottom"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/wIcon5"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/visibility"
+                    android:src="@drawable/wether_icon_visibility" />
+
+                <TextView
+                    android:id="@+id/wTitle5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:text="@string/visibility"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+
+                <TextView
+                    android:id="@+id/weatherVis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/weather_dinamic_data_padding"
+                    android:singleLine="true"
+                    android:text="@string/not_available"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/weather_row_spacing"
+                android:background="@drawable/border_bottom"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/wIcon6"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/wind"
+                    android:src="@drawable/wether_icon_wind" />
+
+                <TextView
+                    android:id="@+id/wTitle6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:text="@string/wind"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+
+                <TextView
+                    android:id="@+id/weatherWind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/weather_dinamic_data_padding"
+                    android:singleLine="true"
+                    android:text="@string/not_available"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/weather_row_spacing"
+                android:background="@drawable/border_bottom"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/wIcon7"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/dew_point"
+                    android:src="@drawable/wether_icon_dew" />
+
+                <TextView
+                    android:id="@+id/wTitle7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:text="@string/dew_point"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+
+                <TextView
+                    android:id="@+id/weatherDew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/weather_dinamic_data_padding"
+                    android:singleLine="true"
+                    android:text="@string/not_available"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/wIcon8"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/dew_point"
+                    android:src="@drawable/weather_icon_obscuration" />
+
+                <TextView
+                    android:id="@+id/wTitle8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:text="@string/obscurations"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+
+                <TextView
+                    android:id="@+id/weatherObscuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/weather_dinamic_data_padding"
+                    android:singleLine="true"
+                    android:text="@string/not_available"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/weather_screen_shape"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/tafReportTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/border_bottom"
+                    android:singleLine="true"
+                    android:text="@string/taf_report"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/weather_data_text" />
+
+                <TextView
+                    android:id="@+id/tafReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/not_available"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/text_taf_small" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

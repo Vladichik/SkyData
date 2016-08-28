@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/border_bottom"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="7dp"
+            android:src="@drawable/icon_found_airport" />
+
+        <TextView
+            android:id="@+id/airpName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="9"
+            android:singleLine="true"
+            android:text="@string/text"
+            android:textColor="@color/logo_red_darker"
+            android:textSize="@dimen/dialog_list_text_size" />
+
+        <TextView
+            android:id="@+id/airpIcao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:singleLine="true"
+            android:text="@string/text"
+            android:textColor="@color/logo_red_darker"
+            android:textSize="@dimen/dialog_list_text_size" />
+    </LinearLayout>
+
+</LinearLayout>

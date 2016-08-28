@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_flight_details_shape"
+    android:minHeight="550dp"
+    android:minWidth="350dp"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/close_details_dialog"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="top|right"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_styles_map_dialog" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="@dimen/text_cell_padding"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/icon_flight_num_big" />
+
+                <TextView
+                    android:id="@+id/detailedAirlineCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/text_cell_padding_small"
+                    android:textColor="@color/text_color_orange"
+                    android:textSize="@dimen/dialog_list_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detailedFlightNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/text_color_orange"
+                    android:textSize="@dimen/dialog_list_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/text_cell_padding_big"
+                    android:text="@string/departing_airline_name"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+
+                <TextView
+                    android:id="@+id/detailedAirlineName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/text_cell_padding_small"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/airplane"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+
+                <TextView
+                    android:id="@+id/detailedAirplaneName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/text_cell_padding_small"
+                    android:singleLine="true"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/border_bottom"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/flight_duration"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+
+                <TextView
+                    android:id="@+id/detailedFlightDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/text_cell_padding_small"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="@dimen/text_cell_padding"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/icon_depart_airport" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/departure_airp"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/flight_from"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+
+                <TextView
+                    android:id="@+id/departureAirport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/text_cell_padding_small"
+                    android:singleLine="true"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/location"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+
+                <TextView
+                    android:id="@+id/airportLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/text_cell_padding_small"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/terminal"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+
+                <TextView
+                    android:id="@+id/detailedDepTerminal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/text_cell_padding_small"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/gate"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+
+                <TextView
+                    android:id="@+id/detailedDepGate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/text_cell_padding_small"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/border_bottom"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/time"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+
+                <TextView
+                    android:id="@+id/detailedDepartureTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/text_cell_padding_small"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="@dimen/text_cell_padding"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/icon_arrival_airport" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/arrival_airp"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/flight_to"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+
+                <TextView
+                    android:id="@+id/arrivalAirport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/text_cell_padding_small"
+                    android:singleLine="true"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/location"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+
+                <TextView
+                    android:id="@+id/arrivalAirportLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/text_cell_padding_small"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/terminal"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+
+                <TextView
+                    android:id="@+id/detailedArrTerminal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/text_cell_padding_small"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/time"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+
+                <TextView
+                    android:id="@+id/detailedArrTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/text_cell_padding_small"
+                    android:textColor="@color/logo_red_darker"
+                    android:textSize="@dimen/dialog_list_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

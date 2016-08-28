@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/weather_background"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <AutoCompleteTextView
+            android:id="@+id/departuresICAO"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corners_edittext"
+            android:ems="10"
+            android:hint="@string/weather_input_field"
+            android:inputType="textCapCharacters"
+            android:maxLength="4"
+            android:padding="7dp"
+            android:singleLine="true" >
+        </AutoCompleteTextView>
+
+        <Button
+            android:id="@+id/showDeparturesData"
+            style="@style/AppTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/button_action_show_states"
+            android:minHeight="37dip"
+            android:text="@string/show_weather_button"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:background="@drawable/arrivals_list_container"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@drawable/border_botom_red"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/logo_red_color"
+                android:textSize="@dimen/weather_data_text"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/departures_title"
+                android:textStyle="bold" />
+            
+            <TextView
+                android:id="@+id/departingAirportName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/logo_red_color"
+                android:textSize="@dimen/weather_data_text"
+                android:paddingLeft="10dp"
+                android:textStyle="bold" />
+            
+        </LinearLayout>
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

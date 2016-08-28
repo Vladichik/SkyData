@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="80dp"
+    android:layout_marginBottom="30dp"
+    android:background="@drawable/dialog_shape_rounded" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/logo_red_darker"
+        android:textSize="@dimen/text_dialog_size"
+        android:textStyle="bold"
+        android:text="@string/found_airports_title" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="@dimen/airports_dialog_width"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:divider="@null" >
+    </ListView>
+
+    <Button
+        android:id="@+id/closeAirportsDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:textColor="@color/logo_red_darker"
+        android:textSize="@dimen/text_dialog_size"
+        android:text="@string/found_airports_cancel_button"
+        android:background="@drawable/button_states_styles" />
+
+</LinearLayout>

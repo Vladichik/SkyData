@@ -1,0 +1,28 @@
+<resources>
+
+    <!--
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    -->
+    <dimen name="activity_horizontal_margin">64dp</dimen>
+    <bool name="isTablet">true</bool>
+    <dimen name="airport_name">18sp</dimen>
+    <dimen name="text_taf_small">15sp</dimen>
+    <dimen name="weather_data_text">17sp</dimen>
+    <dimen name="airports_dialog_width">450dp</dimen>
+    <dimen name="text_dialog_size">17sp</dimen>
+    <dimen name="dialog_list_text_size">17sp</dimen>
+    <dimen name="map_radiobutton_deflection">40dp</dimen>
+    <dimen name="button_inner_padding">5dp</dimen>
+    <dimen name="button_distance_margin">7dp</dimen>
+    <dimen name="map_button_text">17sp</dimen>
+    <dimen name="text_flight_number_size">16sp</dimen>
+    <dimen name="text_nav_menu_size">19sp</dimen>
+    <dimen name="row_flight_number">16sp</dimen>
+	<dimen name="row_field_name">15sp</dimen>
+	<dimen name="text_cell_padding_big">30dp</dimen>
+	<dimen name="text_cell_padding">10dp</dimen>
+	<dimen name="text_cell_padding_small">5dp</dimen>
+	<dimen name="row_margin">3dp</dimen>
+</resources>

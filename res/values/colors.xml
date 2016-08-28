@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="show_button_static_color">#0fc3ff</color>
+    <color name="stroke_edit_text">#B0B0B0</color>
+    <color name="background_weather_table">#99FFFFFF</color>
+    <color name="text_color_yellow">#FFD900</color>
+    <color name="dialog_button_background">#990e0e0e</color>
+    <color name="border_bottom">#5501aae2</color>
+    <color name="border_bottom_light">#00ffe862</color>
+    <color name="logo_red_color">#00a2ff</color>
+    <color name="logo_red_darker">#007cdc</color>
+    <color name="buton_pressed_color">#77FFD900</color>
+    <color name="white_transparent">#99FFFFFF</color>
+    <color name="text_color_gray">#383838</color>
+    <color name="text_color_gray_light">#8A8A8A</color>
+    <color name="text_color_orange">#E88700</color>
+    <color name="text_color_green">#31ae00</color>
+    <color name="text_color_red">#ff0000</color>
+    <color name="button_pressed_color">#9ed3fd</color>
+    <color name="selected_row_color">#77B5B5B5</color>
+    <color name="tab_text_color">#707070</color>
+    <color name="nav_drawer_border_color">#D1D1D1</color>
+</resources>

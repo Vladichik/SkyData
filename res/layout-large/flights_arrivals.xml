@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/weather_background_land" >
+    
+    
+    <fragment
+        android:id="@+id/arrivals_fragment"
+        android:name="flightsarrivals.FlightsArrivals"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+    </fragment>
+    
+    <fragment
+        android:id="@+id/flight_map"
+        android:name="flightsarrivals.FlightMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+    </fragment>
+
+</LinearLayout>
